@@ -1,0 +1,55 @@
+:root {
+  --clr-background: #000101;
+  --clr-text: #e0ffff;
+  --clr-primary: #007f5f;
+  --clr-secondary: #2b9348;
+  --clr-accent-rich: #dddf00;
+  --clr-accent-dull: #ffff3f;
+}
+
+html {
+  color: var(--clr-text);
+  background-color: var(--clr-background);
+}
+
+header {
+  min-height: 80vh;
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
+  place-items: center;
+}
+
+.name {
+  font-size: max(1vw, 8rem);
+}
+
+.slogan {
+  position: relative;
+  max-width: 35rem;
+  place-self: center;
+}
+
+.slogan::before {
+  content: "";
+  position: absolute;
+  top: -160%;
+  left: -7.5%;
+  width: 110%;
+  min-height: 400%;
+  background: var(--clr-secondary);
+  transform: skewX(5deg) rotate(5deg);
+  z-index: -2;
+}
+
+.slogan::after {
+  content: "";
+  position: absolute;
+  top: -160%;
+  left: -5%;
+  width: 105%;
+  min-height: 400%;
+  background: var(--clr-primary);
+  opacity: 0.95;
+  transform: skewX(-5deg) rotate(-5deg);
+  z-index: -1;
+}
