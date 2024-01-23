@@ -9,7 +9,17 @@
 
 html {
   color: var(--clr-text);
-  background-color: var(--clr-background);
+  background: radial-gradient(
+      circle at 80% 1%,
+      color-mix(in srgb, var(--clr-text) 20%, transparent) 2.75%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 30%,
+      color-mix(in srgb, var(--clr-accent-dull) 20%, transparent) 5%,
+      transparent 20%
+    ),
+    var(--clr-background);
 }
 
 header {
@@ -23,33 +33,34 @@ header {
   font-size: max(1vw, 8rem);
 }
 
+.first-name {
+  color: var(--clr-accent-dull);
+}
+
+.last-name {
+  color: var(--clr-accent-rich);
+}
+
 .slogan {
+  isolation: isolate;
   position: relative;
   max-width: 35rem;
   place-self: center;
 }
 
-.slogan::before {
-  content: "";
-  position: absolute;
-  top: -160%;
-  left: -7.5%;
-  width: 110%;
-  min-height: 400%;
-  background: var(--clr-secondary);
-  transform: skewX(5deg) rotate(5deg);
-  z-index: -2;
+section {
+  min-height: 30vh;
+  margin: 10vw;
 }
 
-.slogan::after {
-  content: "";
-  position: absolute;
-  top: -160%;
-  left: -5%;
-  width: 105%;
-  min-height: 400%;
+.about-me {
+  background: var(--clr-accent-dull);
+}
+
+.projects {
   background: var(--clr-primary);
-  opacity: 0.95;
-  transform: skewX(-5deg) rotate(-5deg);
-  z-index: -1;
+}
+
+.contact {
+  background: var(--clr-secondary);
 }
