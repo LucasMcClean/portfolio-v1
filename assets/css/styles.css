@@ -1,0 +1,110 @@
+:root {
+  --clr-background: #000101;
+  --clr-text: #e0ffff;
+  --clr-primary: #007f5f;
+  --clr-secondary: #2b9348;
+  --clr-accent-rich: #dddf00;
+  --clr-accent-dull: #ffff3f;
+}
+
+html {
+  color: var(--clr-text);
+  background-color: var(--clr-background);
+  font-family: system-ui, sans-serif;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  min-height: 5vh;
+  width: 96%;
+  margin: 0.3rem 2%;
+  padding: 0 5vw 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  --clr-nav-ini: color-mix(in srgb, var(--clr-primary) 90%, var(--clr-text));
+  --clr-nav-fin: color-mix(in srgb, var(--clr-secondary) 80%, var(--clr-text));
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--clr-nav-ini) 98%, transparent),
+    color-mix(in srgb, var(--clr-nav-fin) 98%, transparent)
+  );
+  border-radius: 20px;
+  font-size: 1.125rem;
+}
+
+.nav-name {
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 5rem;
+}
+
+.nav-links a {
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 30%;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--clr-text) 10%, transparent),
+    transparent
+  );
+}
+
+.header-text {
+  width: 80%;
+  margin-top: 20vh;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 0.8;
+}
+
+.slogan {
+  font-style: italic;
+}
+
+main {
+  margin: 0 2% 0 30%;
+}
+
+/* TESTING ONLY */
+section {
+  min-height: 30svh;
+  margin: 20svh 0;
+}
+
+.about {
+  background-color: var(--clr-primary);
+}
+
+.projects {
+  background-color: var(--clr-secondary);
+}
+
+.contact {
+  background-color: var(--clr-accent-dull);
+}
+
+.other {
+  background-color: var(--clr-accent-rich);
+}
