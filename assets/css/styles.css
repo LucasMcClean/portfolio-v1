@@ -25,12 +25,12 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  --clr-nav-ini: color-mix(in srgb, var(--clr-primary) 90%, var(--clr-text));
-  --clr-nav-fin: color-mix(in srgb, var(--clr-secondary) 80%, var(--clr-text));
+  --clr-nav-ini: color-mix(in srgb, var(--clr-primary) 65%, var(--clr-text));
+  --clr-nav-fin: color-mix(in srgb, var(--clr-secondary) 65%, var(--clr-text));
   background: linear-gradient(
     160deg,
-    color-mix(in srgb, var(--clr-nav-ini) 98%, transparent),
-    color-mix(in srgb, var(--clr-nav-fin) 98%, transparent)
+    color-mix(in srgb, var(--clr-nav-ini) 90%, transparent),
+    color-mix(in srgb, var(--clr-nav-fin) 90%, transparent)
   );
   border-radius: 20px;
   font-size: 1.125rem;
@@ -48,6 +48,10 @@ html {
 .nav-links a {
   color: var(--clr-text);
   text-decoration: none;
+}
+
+.nav-links span {
+  font-weight: bold;
 }
 
 header {
@@ -85,6 +89,32 @@ header {
 
 main {
   margin: 0 2% 0 30%;
+}
+
+footer {
+  height: 30svh;
+  background: radial-gradient(
+    ellipse at 80% 100%,
+    color-mix(in srgb, var(--clr-text) 10%, transparent),
+    transparent 45%
+  );
+}
+
+/* Utility Classes */
+.clr-primary {
+  color: var(--clr-primary);
+}
+
+.clr-secondary {
+  color: var(--clr-secondary);
+}
+
+.clr-accent-dull {
+  color: var(--clr-accent-dull);
+}
+
+.clr-accent-rich {
+  color: var(--clr-accent-rich);
 }
 
 /* TESTING ONLY */
