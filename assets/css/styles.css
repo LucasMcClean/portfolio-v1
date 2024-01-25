@@ -97,10 +97,22 @@ header {
 .hire-me {
   width: 40%;
   height: 1.5em;
-  margin: 0 auto 0 20%;
+  margin: 0.2em auto 0.2em 20%;
   border-radius: 10px;
   font-size: clamp(1.275rem, 1vw + 0.5rem, 1.4rem);
   font-weight: bold;
+  transition: width 0.2s, height 0.2s, margin 0.2s, background-color 0.3s;
+}
+/* Realign with grid----------------------------------------------------------------------- */
+.hire-me:hover {
+  width: 60%;
+  height: 1.8em;
+  margin: 0 auto 0 10%;
+  background-color: color-mix(
+    in srgb,
+    var(--clr-accent-dull) 80%,
+    var(--clr-text)
+  );
 }
 
 /* -----Main Content----- */
@@ -112,10 +124,11 @@ main {
 .about {
   isolation: isolate;
   min-height: 70svh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
+}
+
+.about .grid-wrapper {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
 
 .about::after {
@@ -125,26 +138,17 @@ main {
   left: 0;
   width: 150%;
   min-height: 30%;
+  transform: skewX(-8deg) rotate(-8deg);
   background-color: var(--clr-primary);
   z-index: -1;
-  transform: skewX(-8deg) rotate(-8deg);
+}
+
+.about h2 {
+  font-size: clamp(1.5rem, 3.25vw + 1rem, 2.5rem);
 }
 
 .about-text {
-  position: relative;
-  width: min(40vw, 30rem);
-  padding: 1rem;
-  background: linear-gradient(
-    -10deg,
-    var(--clr-background),
-    color-mix(in srgb, var(--clr-background) 50%, transparent)
-  );
-  border-radius: 1.275rem;
-}
-
-.about-img {
-  max-width: 30%;
-  object-fit: cover;
+  background-color: var(--clr-background);
 }
 
 /* -----Footer----- */
