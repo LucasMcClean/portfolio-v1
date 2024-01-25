@@ -33,13 +33,10 @@ html {
 .nav-bar::after {
   content: "";
   position: absolute;
-  width: 100%;
+  left: -10%;
+  width: 110%;
   min-height: 6vh;
-  background: linear-gradient(
-    to right,
-    var(--clr-text) 30%,
-    color-mix(in srgb, var(--clr-background) 40%, var(--clr-text))
-  );
+  background: var(--clr-text);
   transform: skewX(-40deg);
   z-index: -1;
 }
@@ -58,6 +55,10 @@ html {
   text-decoration: none;
 }
 
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
 .nav-links span {
   font-weight: bold;
 }
@@ -72,8 +73,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--clr-background);
-  background: var(--clr-text);
+  color: var(--clr-text);
+  background: var(--clr-background);
 }
 
 .header-text {
