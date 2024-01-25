@@ -13,27 +13,35 @@ html {
   font-family: system-ui, sans-serif;
 }
 
+/* -----Navigation Bar----- */
 .nav-bar {
+  isolation: isolate;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   min-height: 5vh;
-  width: 96%;
-  margin: 0.3rem 2%;
+  width: 93%;
   padding: 0 5vw 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  --clr-nav-ini: color-mix(in srgb, var(--clr-primary) 65%, var(--clr-text));
-  --clr-nav-fin: color-mix(in srgb, var(--clr-secondary) 65%, var(--clr-text));
-  background: linear-gradient(
-    160deg,
-    color-mix(in srgb, var(--clr-nav-ini) 90%, transparent),
-    color-mix(in srgb, var(--clr-nav-fin) 90%, transparent)
-  );
-  border-radius: 20px;
+  color: var(--clr-background);
   font-size: 1.125rem;
+}
+
+.nav-bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  min-height: 6vh;
+  background: linear-gradient(
+    to right,
+    var(--clr-text) 30%,
+    color-mix(in srgb, var(--clr-background) 40%, var(--clr-text))
+  );
+  transform: skewX(-40deg);
+  z-index: -1;
 }
 
 .nav-name {
@@ -46,7 +54,7 @@ html {
 }
 
 .nav-links a {
-  color: var(--clr-text);
+  color: var(--clr-background);
   text-decoration: none;
 }
 
@@ -54,23 +62,22 @@ html {
   font-weight: bold;
 }
 
+/* -----Side Header----- */
 header {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 30%;
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--clr-text) 10%, transparent),
-    transparent
-  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-background);
+  background: var(--clr-text);
 }
 
 .header-text {
-  width: 80%;
-  margin-top: 20vh;
-  padding-left: 1.5rem;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,19 +85,22 @@ header {
 }
 
 .title {
-  font-size: 4rem;
+  font-size: clamp(2rem, 3.25vw + 1rem, 5rem);
   font-weight: bold;
   line-height: 0.8;
 }
 
 .slogan {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.275rem);
   font-style: italic;
 }
 
+/* -----Main Content----- */
 main {
-  margin: 0 2% 0 30%;
+  margin: 0 2% 0 32%;
 }
 
+/* -----Footer----- */
 footer {
   height: 30svh;
   background: radial-gradient(
@@ -100,7 +110,7 @@ footer {
   );
 }
 
-/* Utility Classes */
+/* -----Utility Classes----- */
 .clr-primary {
   color: var(--clr-primary);
 }
@@ -117,7 +127,7 @@ footer {
   color: var(--clr-accent-rich);
 }
 
-/* TESTING ONLY */
+/* !!----TESTING ONLY----!! */
 section {
   min-height: 30svh;
   margin: 20svh 0;
