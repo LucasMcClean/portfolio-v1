@@ -37,6 +37,7 @@ html {
   width: 110%;
   min-height: 6vh;
   background: var(--clr-text);
+  box-shadow: 5px 3px color-mix(in srgb, var(--clr-text) 30%, transparent);
   transform: skewX(-40deg);
   z-index: -1;
 }
