@@ -42,6 +42,8 @@ html {
 }
 
 .nav-name {
+  font-size: 1.5rem;
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: bold;
 }
 
@@ -75,6 +77,7 @@ header {
   align-items: center;
   color: var(--clr-text);
   background: var(--clr-background);
+  z-index: 888;
 }
 
 .header-text {
@@ -91,14 +94,57 @@ header {
   line-height: 0.8;
 }
 
-.slogan {
-  font-size: clamp(1rem, 1vw + 0.5rem, 1.275rem);
-  font-style: italic;
+.hire-me {
+  width: 40%;
+  height: 1.5em;
+  margin: 0 auto 0 20%;
+  border-radius: 10px;
+  font-size: clamp(1.275rem, 1vw + 0.5rem, 1.4rem);
+  font-weight: bold;
 }
 
 /* -----Main Content----- */
 main {
   margin: 0 2% 0 32%;
+}
+
+/* -----About Section----- */
+.about {
+  isolation: isolate;
+  min-height: 70svh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 150%;
+  min-height: 30%;
+  background-color: var(--clr-primary);
+  z-index: -1;
+  transform: skewX(-8deg) rotate(-8deg);
+}
+
+.about-text {
+  position: relative;
+  width: min(40vw, 30rem);
+  padding: 1rem;
+  background: linear-gradient(
+    -10deg,
+    var(--clr-background),
+    color-mix(in srgb, var(--clr-background) 50%, transparent)
+  );
+  border-radius: 1.275rem;
+}
+
+.about-img {
+  max-width: 30%;
+  object-fit: cover;
 }
 
 /* -----Footer----- */
@@ -132,10 +178,6 @@ footer {
 section {
   min-height: 30svh;
   margin: 20svh 0;
-}
-
-.about {
-  background-color: var(--clr-primary);
 }
 
 .projects {
