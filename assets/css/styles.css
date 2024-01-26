@@ -37,7 +37,6 @@ html {
   width: 110%;
   min-height: 6vh;
   background: var(--clr-text);
-  box-shadow: 5px 3px color-mix(in srgb, var(--clr-text) 30%, transparent);
   transform: skewX(-40deg);
   z-index: -1;
 }
@@ -95,20 +94,32 @@ header {
   line-height: 0.8;
 }
 
+.engineer,
+.designer {
+  transition: color 0.2s;
+}
+
+.engineer:hover {
+  color: color-mix(in srgb, var(--clr-primary) 80%, var(--clr-text));
+}
+
+.designer:hover {
+  color: color-mix(in srgb, var(--clr-accent-rich) 80%, var(--clr-text));
+}
+
 .hire-me {
   width: 40%;
-  height: 1.5em;
+  height: 1.7em;
   margin: 0.2em auto 0.2em 20%;
   border-radius: 10px;
   font-size: clamp(1.275rem, 1vw + 0.5rem, 1.4rem);
   font-weight: bold;
-  transition: width 0.2s, height 0.2s, margin 0.2s, background-color 0.3s;
+  transition: width 0.2s, margin 0.2s, background-color 0.3s;
 }
-/* Realign with grid----------------------------------------------------------------------- */
+
 .hire-me:hover {
   width: 60%;
-  height: 1.8em;
-  margin: 0 auto 0 10%;
+  margin: 0.2em auto 0.2em 10%;
   background-color: color-mix(
     in srgb,
     var(--clr-accent-dull) 80%,
@@ -131,7 +142,7 @@ main {
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
-
+/* Fix overflow scroll-x------------------------------------------------------------- */
 .about::after {
   content: "";
   position: absolute;
@@ -146,6 +157,7 @@ main {
 
 .about h2 {
   font-size: clamp(1.5rem, 3.25vw + 1rem, 2.5rem);
+  font-weight: bold;
 }
 
 .about-text {
@@ -155,11 +167,20 @@ main {
 /* -----Footer----- */
 footer {
   height: 30svh;
+  margin: 0 2% 0 32%;
   background: radial-gradient(
     ellipse at 80% 100%,
     color-mix(in srgb, var(--clr-text) 10%, transparent),
     transparent 45%
   );
+}
+
+.made-by {
+  position: relative;
+  top: 85%;
+  left: 0;
+  text-align: center;
+  font-style: italic;
 }
 
 /* -----Utility Classes----- */
