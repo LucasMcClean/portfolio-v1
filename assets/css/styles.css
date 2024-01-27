@@ -13,6 +13,11 @@ html {
   font-family: system-ui, sans-serif;
 }
 
+.page-link {
+  position: relative;
+  top: -8vh;
+}
+
 /* -----Navigation Bar----- */
 .nav-bar {
   isolation: isolate;
