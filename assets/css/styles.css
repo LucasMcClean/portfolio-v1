@@ -1,6 +1,6 @@
 :root {
   --clr-background: #000101;
-  --clr-text: #e0ffff;
+  --clr-text: #e8ffff;
   --clr-primary: #007f5f;
   --clr-secondary: #2b9348;
   --clr-accent-rich: #dddf00;
@@ -114,11 +114,12 @@ header {
 }
 
 .hire-me:hover {
+  cursor: pointer;
   width: 60%;
   margin: 0.2em auto 0.2em 10%;
   background-color: color-mix(
     in srgb,
-    var(--clr-accent-dull) 90%,
+    var(--clr-accent-dull) 98%,
     var(--clr-text)
   );
 }
@@ -136,7 +137,9 @@ main {
 
 .about .grid-wrapper {
   display: grid;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 3rem;
 }
 /* Fix overflow scroll-x------------------------------------------------------------- */
 .about::after {
@@ -144,7 +147,7 @@ main {
   position: absolute;
   top: 40%;
   left: 0;
-  width: 150%;
+  width: 180%;
   min-height: 30%;
   transform: skewX(-8deg) rotate(-8deg);
   background-color: var(--clr-primary);
@@ -152,12 +155,26 @@ main {
 }
 
 .about h2 {
-  font-size: clamp(1.5rem, 3.25vw + 1rem, 2.5rem);
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.5rem, 3.25vw + 1rem, 3rem);
   font-weight: bold;
 }
 
 .about-text {
+  padding: 1rem;
+  border: 5px solid var(--clr-primary);
   background-color: var(--clr-background);
+  /* background: linear-gradient(
+    45deg,
+    var(--clr-background) 33%,
+    color-mix(in srgb, var(--clr-background) 80%, transparent) 33%,
+    color-mix(in srgb, var(--clr-background) 80%, transparent) 66%,
+    color-mix(in srgb, var(--clr-background) 50%, transparent) 66%
+  ); */
+}
+
+.about img {
+  max-height: 80svh;
 }
 
 /* -----Footer----- */
@@ -180,6 +197,10 @@ footer {
 }
 
 /* -----Utility Classes----- */
+strong {
+  font-weight: bold;
+}
+
 .clr-primary {
   color: var(--clr-primary);
 }
