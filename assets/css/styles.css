@@ -58,7 +58,7 @@ html {
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  border-bottom-width: 4px;
 }
 
 .nav-links span {
@@ -89,22 +89,13 @@ header {
 }
 
 .title {
-  font-size: clamp(2rem, 3.25vw + 1rem, 5rem);
+  font-size: clamp(2rem, 3vw + 1.5rem, 4.5rem);
   font-weight: bold;
   line-height: 0.8;
 }
 
-.engineer,
-.designer {
-  transition: color 0.2s;
-}
-
-.engineer:hover {
+.title:hover {
   color: color-mix(in srgb, var(--clr-primary) 80%, var(--clr-text));
-}
-
-.designer:hover {
-  color: color-mix(in srgb, var(--clr-accent-rich) 80%, var(--clr-text));
 }
 
 .hire-me {
@@ -122,7 +113,7 @@ header {
   margin: 0.2em auto 0.2em 10%;
   background-color: color-mix(
     in srgb,
-    var(--clr-accent-dull) 80%,
+    var(--clr-accent-dull) 90%,
     var(--clr-text)
   );
 }
@@ -198,6 +189,22 @@ footer {
 
 .clr-accent-rich {
   color: var(--clr-accent-rich);
+}
+
+.brdr-b-primary {
+  border-bottom: 2px solid var(--clr-primary);
+}
+
+.brdr-b-secondary {
+  border-bottom: 2px solid var(--clr-secondary);
+}
+
+.brdr-b-accent-dull {
+  border-bottom: 2px solid var(--clr-accent-dull);
+}
+
+.brdr-b-accent-rich {
+  border-bottom: 2px solid var(--clr-accent-rich);
 }
 
 /* !!----TESTING ONLY----!! */
