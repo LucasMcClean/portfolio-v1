@@ -83,6 +83,7 @@ html {
   position: fixed;
   top: 6vh;
   left: 0;
+  transform: skewX(-45deg);
   animation: progress 1s linear;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
@@ -151,10 +152,64 @@ main {
   border-left: 2px solid var(--clr-text);
 }
 
+.background-pattern {
+  --clr-background-alt: color-mix(
+    in srgb,
+    var(--clr-background) 95%,
+    var(--clr-text)
+  );
+  position: absolute;
+  top: 0;
+  left: 30%;
+  height: 100%;
+  width: 70%;
+  background: repeating-linear-gradient(
+    var(--clr-background-alt) 0svh 20svh,
+    transparent 20svh 27svh,
+    var(--clr-background-alt) 27svh 35svh,
+    transparent 35svh 37svh,
+    var(--clr-background-alt) 37svh 40svh,
+    transparent 40svh 45svh
+  );
+  z-index: -999;
+  /* animation: parallax 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both; */
+}
+
 /* -----About Section----- */
 .about {
   isolation: isolate;
-  min-height: 70svh;
+  position: relative;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: -50%;
+  width: 180%;
+  min-height: 30%;
+  transform: skewX(-8deg) rotate(-8deg);
+  background: linear-gradient(
+    to right,
+    var(--clr-primary) 50%,
+    transparent 50%
+  );
+  z-index: -1;
+  animation: slide-in 2s ease-out 1 forwards;
+}
+
+.about h2 {
+  display: inline-block;
+  margin: 10svh 0 0.4rem 0.5rem;
+  padding: 0 1rem 0 1rem;
+  border-bottom: 3px solid var(--clr-primary);
+  box-shadow: 0 1px var(--clr-text);
+  font-size: clamp(1.5rem, 3.25vw + 1rem, 3rem);
+  font-weight: bold;
 }
 
 .about .grid-wrapper {
@@ -162,33 +217,6 @@ main {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 3rem;
-}
-/* Fix overflow scroll-x------------------------------------------------------------- */
-.about::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -50%;
-  width: 180%;
-  min-height: 30%;
-  transform: skewX(-8deg) rotate(-8deg);
-  background: linear-gradient(
-    to right,
-    var(--clr-primary) 20%,
-    var(--clr-background)
-  );
-  z-index: -1;
-  animation: slide-in 0.05s linear;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-}
-
-.about h2 {
-  margin: 0 0 0.4rem 0.5rem;
-  font-size: clamp(1.5rem, 3.25vw + 1rem, 3rem);
-  font-weight: bold;
 }
 
 .about-text {
@@ -199,6 +227,28 @@ main {
 
 .about img {
   max-height: 80svh;
+}
+
+/* Projects Section */
+.projects {
+  margin: 20svh 0;
+}
+
+.projects h2 {
+  display: inline-block;
+  margin: 0 0 0.4rem 0.5rem;
+  padding: 0 1rem 0 1rem;
+  border-bottom: 3px solid var(--clr-secondary);
+  box-shadow: 0 1px var(--clr-text);
+  font-size: clamp(1.5rem, 3.25vw + 1rem, 3rem);
+  font-weight: bold;
+}
+
+.project {
+  color: var(--clr-secondary);
+  text-align: right;
+  font-size: clamp(2rem, 3.25vw + 1rem, 4rem);
+  font-weight: bold;
 }
 
 /* -----Footer----- */
@@ -261,24 +311,20 @@ strong {
 
 @keyframes slide-in {
   to {
+    top: 50%;
     left: 20%;
   }
 }
 
 /* !!----TESTING ONLY----!! */
-section {
+.contact {
   min-height: 30svh;
   margin: 20svh 0;
-}
-
-.projects {
-  background-color: var(--clr-secondary);
-}
-
-.contact {
   background-color: var(--clr-accent-dull);
 }
 
 .other {
+  min-height: 30svh;
+  margin: 20svh 0;
   background-color: var(--clr-accent-rich);
 }
