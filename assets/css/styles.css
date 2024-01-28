@@ -119,12 +119,12 @@ header {
   font-weight: bold;
   line-height: 0.8;
   text-shadow: 0 0 0.025em var(--clr-primary);
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .title:hover {
   color: color-mix(in srgb, var(--clr-primary) 80%, var(--clr-text));
-  text-shadow: 0 0 0.5em var(--clr-primary);
+  text-shadow: 0 0 0.125em var(--clr-primary);
 }
 
 .hire-me {
@@ -150,6 +150,7 @@ header {
   width: 60%;
   margin: 0.2em auto 0.2em 10%;
   background-color: var(--active-color);
+  box-shadow: 0 0 0.2em var(--active-color);
 }
 
 .hire-me::after {
@@ -242,10 +243,10 @@ main::after {
   display: inline-block;
   margin: 10svh 0 0.4rem 0.5rem;
   padding: 0 1rem 0 1rem;
-  border-bottom: 3px solid var(--clr-primary);
-  box-shadow: 0 1px var(--clr-text);
   font-size: clamp(1.5rem, 3.25vw + 1rem, 3rem);
   font-weight: bold;
+  text-shadow: 0 0 0.2em var(--clr-primary);
+  text-decoration: underline double 2px;
 }
 
 .about .grid-wrapper {
@@ -265,7 +266,7 @@ main::after {
   max-height: 80svh;
 }
 
-/* Projects Section */
+/* -----Projects Section----- */
 .projects {
   margin: 20svh 0;
 }
@@ -281,10 +282,15 @@ main::after {
 }
 
 .project {
+  margin-left: 5vw;
   color: var(--clr-secondary);
-  text-align: right;
   font-size: clamp(2rem, 3.25vw + 1rem, 4rem);
   font-weight: bold;
+  transition: all 0.2s;
+}
+
+.project:hover {
+  transform: perspective(10em) rotateY(30deg);
 }
 
 /* -----Footer----- */
@@ -338,7 +344,7 @@ strong {
   border-bottom: 2px solid var(--clr-accent-rich);
 }
 
-/* Animations */
+/* -----Animations----- */
 @keyframes progress {
   to {
     width: 91.5%;
