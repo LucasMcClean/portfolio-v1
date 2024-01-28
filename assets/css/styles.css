@@ -16,6 +16,7 @@ html {
     ),
     var(--clr-background);
   font-family: system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 .page-link {
@@ -73,6 +74,20 @@ html {
 
 .nav-links span {
   font-weight: bold;
+}
+
+.progress {
+  height: 2px;
+  width: 0%;
+  background-color: var(--clr-text);
+  position: fixed;
+  top: 6vh;
+  left: 0;
+  animation: progress 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 
 /* -----Side Header----- */
@@ -152,13 +167,22 @@ main {
 .about::after {
   content: "";
   position: absolute;
-  top: 40%;
-  left: 0;
+  top: 50%;
+  left: -50%;
   width: 180%;
   min-height: 30%;
   transform: skewX(-8deg) rotate(-8deg);
-  background-color: var(--clr-primary);
+  background: linear-gradient(
+    to right,
+    var(--clr-primary) 20%,
+    var(--clr-background)
+  );
   z-index: -1;
+  animation: slide-in 0.05s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 
 .about h2 {
@@ -226,6 +250,19 @@ strong {
 
 .brdr-b-accent-rich {
   border-bottom: 2px solid var(--clr-accent-rich);
+}
+
+/* Animations */
+@keyframes progress {
+  to {
+    width: 91.5%;
+  }
+}
+
+@keyframes slide-in {
+  to {
+    left: 20%;
+  }
 }
 
 /* !!----TESTING ONLY----!! */
