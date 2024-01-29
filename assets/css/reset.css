@@ -12,6 +12,11 @@
   font: inherit;
 }
 
+::before,
+::after {
+  pointer-events: none;
+}
+
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
