@@ -243,16 +243,7 @@ main::after {
 }
 
 .about h2 {
-  --reflection-opacity: 0.15;
-  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(80%);
-  position: relative;
-  display: inline-block;
-  margin: 0 0 20svh 0;
   text-shadow: 0 0 0.05em var(--clr-primary);
-  font-size: clamp(4rem, 4vw + 1rem, 8rem);
-  font-weight: bold;
-  /* text-decoration: underline double 2px; */
-  transition: all 0.25s;
 }
 
 .about h2:hover {
@@ -309,13 +300,27 @@ main::after {
 }
 
 .projects h2 {
-  display: inline-block;
-  margin: 0 0 0.4rem 0.5rem;
-  padding: 0 1rem 0 1rem;
-  border-bottom: 3px solid var(--clr-secondary);
-  box-shadow: 0 1px var(--clr-text);
-  font-size: clamp(1.5rem, 3.25vw + 1rem, 3rem);
-  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 0.05em var(--clr-secondary);
+}
+
+.projects h2:hover {
+  --reflection-opacity: 0.2;
+  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(90%);
+  text-shadow: 0 0 0.1em var(--clr-secondary);
+}
+
+.projects h2::after {
+  content: "Selected Work";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  height: 2em;
+  width: 100%;
+  transform: var(--reflection-transforms);
+  filter: blur(10px);
+  opacity: var(--reflection-opacity);
+  transition: all 0.25s;
 }
 
 .project {
@@ -323,6 +328,35 @@ main::after {
   color: var(--clr-secondary);
   font-size: clamp(2rem, 3.25vw + 1rem, 4rem);
   font-weight: bold;
+}
+
+/* -----Contact Section----- */
+.contact {
+  margin: 20svh 0;
+}
+
+.contact h2 {
+  text-align: center;
+  text-shadow: 0 0 0.05em var(--clr-accent-dull);
+}
+
+.contact h2:hover {
+  --reflection-opacity: 0.2;
+  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(90%);
+  text-shadow: 0 0 0.1em var(--clr-accent-dull);
+}
+
+.contact h2::after {
+  content: "Let's Get In Touch";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  height: 2em;
+  width: 100%;
+  transform: var(--reflection-transforms);
+  filter: blur(10px);
+  opacity: var(--reflection-opacity);
+  transition: all 0.25s;
 }
 
 /* -----Footer----- */
@@ -376,6 +410,16 @@ strong {
   border-bottom: 2px solid var(--clr-accent-rich);
 }
 
+.section-header {
+  --reflection-opacity: 0.15;
+  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(80%);
+  position: relative;
+  margin: 0 0 20svh 0;
+  font-size: clamp(4rem, 4vw + 1rem, 8rem);
+  font-weight: bold;
+  transition: all 0.25s;
+}
+
 /* -----Animations----- */
 @keyframes progress {
   to {
@@ -394,17 +438,4 @@ strong {
   to {
     transform: translateY(30%);
   }
-}
-
-/* !!----TESTING ONLY----!! */
-.contact {
-  min-height: 30svh;
-  margin: 20svh 0;
-  background-color: var(--clr-accent-dull);
-}
-
-.other {
-  min-height: 30svh;
-  margin: 20svh 0;
-  background-color: var(--clr-accent-rich);
 }
