@@ -234,35 +234,52 @@ main::after {
   animation: slide-in 2s ease-out 1 forwards;
 }
 
+.about-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .about h2 {
-  --reflection-opacity: 0;
+  --reflection-opacity: 0.15;
+  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(80%);
   position: relative;
   display: inline-block;
-  margin: 0 0 20svh 0.5rem;
-  padding: 0 0 0.5rem 2.5rem;
-  border-right: 5px solid var(--clr-primary);
-  border-bottom: 5px solid var(--clr-primary);
-  border-style: groove;
+  margin: 0 0 20svh 0;
+  text-shadow: 0 0 0.05em var(--clr-primary);
   font-size: clamp(4rem, 4vw + 1rem, 8rem);
   font-weight: bold;
-  text-decoration: underline double 2px;
-  animation: flicker-on 1s linear 1 forwards;
+  /* text-decoration: underline double 2px; */
+  transition: all 0.25s;
 }
 
 .about h2:hover {
-  animation: reflicker 0.2s ease-in-out 1 forwards;
+  --reflection-opacity: 0.2;
+  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(90%);
+  text-shadow: 0 0 0.1em var(--clr-primary);
 }
 
 .about h2::after {
-  content: "Who Am I";
+  content: "What I Do";
   position: absolute;
-  top: 50%;
-  left: 2.5rem;
+  top: 40%;
+  left: 0;
   height: 2em;
   width: 100%;
-  transform: perspective(1em) rotateX(190deg) scaleY(80%);
+  transform: var(--reflection-transforms);
   filter: blur(10px);
   opacity: var(--reflection-opacity);
+  transition: all 0.25s;
+}
+
+.about-slogan {
+  margin-inline: 0.6rem;
+  margin-top: -4rem;
+  color: color-mix(in srgb, var(--clr-text) 70%, var(--clr-background));
+  font-size: 1.125rem;
+  font-style: italic;
 }
 
 .about .grid-wrapper {
@@ -376,44 +393,6 @@ strong {
 @keyframes parallax {
   to {
     transform: translateY(30%);
-  }
-}
-
-@keyframes flicker-on {
-  10% {
-    --reflection-opacity: 0.15;
-    text-shadow: 0 0 0.15em var(--clr-primary);
-  }
-  30% {
-    --reflection-opacity: 0.1;
-    text-shadow: 0 0 0.1em var(--clr-primary);
-  }
-  40% {
-    --reflection-opacity: 0.35;
-    text-shadow: 0 0 0.35em var(--clr-primary);
-  }
-  100% {
-    --reflection-opacity: 0.15;
-    text-shadow: 0 0 0.15em var(--clr-primary);
-  }
-}
-
-@keyframes reflicker {
-  0% {
-    --reflection-opacity: 0.16;
-    text-shadow: 0 0 0.16em var(--clr-primary);
-  }
-  50% {
-    --reflection-opacity: 0.13;
-    text-shadow: 0 0 0.13em var(--clr-primary);
-  }
-  70% {
-    --reflection-opacity: 0.17;
-    text-shadow: 0 0 0.17em var(--clr-primary);
-  }
-  100% {
-    --reflection-opacity: 0.15;
-    text-shadow: 0 0 0.15em var(--clr-primary);
   }
 }
 
