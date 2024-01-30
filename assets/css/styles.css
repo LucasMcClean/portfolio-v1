@@ -280,7 +280,7 @@ main::after {
   font-style: italic;
 }
 
-.about .grid-wrapper {
+.about-grid-wrapper {
   padding-top: 20svh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -330,11 +330,25 @@ main::after {
   transition: all 0.25s;
 }
 
+.projects-grid-wrapper {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 1rem;
+}
+
 .project {
-  margin-left: 5vw;
+  min-height: 30svh;
+  border: 2px solid color-mix(in srgb, var(--clr-secondary) 50%, transparent);
+  border-radius: 10px;
   color: var(--clr-secondary);
+  background: linear-gradient(160deg, transparent 30%, var(--clr-secondary));
   font-size: clamp(2rem, 3.25vw + 1rem, 4rem);
   font-weight: bold;
+}
+
+#proj3 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
 /* -----Contact Section----- */
