@@ -401,6 +401,7 @@ main::after {
 }
 
 .contact h2 {
+  margin-bottom: 1.2em;
   text-align: center;
   text-shadow: 0 0 0.05em var(--clr-accent-dull);
 }
@@ -422,6 +423,16 @@ main::after {
   filter: blur(10px);
   opacity: var(--reflection-opacity);
   transition: all 0.25s;
+}
+
+.contact form {
+  min-height: 70svh;
+  border-radius: 35px;
+  background: linear-gradient(
+    160deg,
+    var(--clr-accent-dull),
+    var(--clr-accent-rich)
+  );
 }
 
 /* -----Footer----- */
