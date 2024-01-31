@@ -337,18 +337,62 @@ main::after {
 }
 
 .project {
+  --project-hover-trans: all ease-out 0.2s;
+  --image-position-top: 0%;
+  --image-position-left: 0%;
+  --image-width: 100%;
+  --image-border: 0px solid var(--clr-background);
+  --title-position-top: 50%;
+  --description-fs: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 30svh;
   border: 2px solid color-mix(in srgb, var(--clr-secondary) 50%, transparent);
   border-radius: 10px;
+  padding: 0.5rem;
   color: var(--clr-secondary);
-  background: linear-gradient(160deg, transparent 30%, var(--clr-secondary));
+  background: linear-gradient(
+    160deg,
+    var(--clr-secondary) 30%,
+    var(--clr-secondary)
+  );
   font-size: clamp(2rem, 3.25vw + 1rem, 4rem);
   font-weight: bold;
 }
 
-#proj3 {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+.project:hover {
+  --image-position-top: -20%;
+  --image-position-left: 15%;
+  --image-width: 70%;
+  --image-border: 20px solid var(--clr-background);
+  --description-fs: 1.175rem;
+  --title-position-top: 35%;
+}
+
+.project-title {
+  position: absolute;
+  top: var(--title-position-top);
+  color: var(--clr-background);
+  transition: var(--project-hover-trans);
+}
+
+.project-image {
+  position: relative;
+  top: var(--image-position-top);
+  left: var(--image-position-left);
+  max-width: var(--image-width);
+  border: var(--image-border);
+  border-radius: 20px;
+  object-fit: cover;
+  transition: var(--project-hover-trans);
+}
+
+.project-description {
+  padding: 1rem;
+  color: var(--clr-text);
+  font-size: var(--description-fs);
+  transition: var(--project-hover-trans);
 }
 
 /* -----Contact Section----- */
