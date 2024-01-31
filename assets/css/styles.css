@@ -340,11 +340,13 @@ main::after {
 .project {
   position: relative;
   border-radius: 20px;
-  background: red;
 }
 
+/* !-----Implement change in JS-----------------------------------------! */
 .project:hover {
-  --image-pos-top: -10%;
+  transform: translate(-0.2vw, -1.5svh);
+  box-shadow: 0.2vw 1.5svh 5px
+    color-mix(in srgb, var(--clr-secondary) 40%, transparent);
 }
 
 .project-title {
