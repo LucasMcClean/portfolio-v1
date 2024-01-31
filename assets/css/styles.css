@@ -307,6 +307,7 @@ main::after {
 }
 
 .projects h2 {
+  margin-bottom: 1.2em;
   text-align: center;
   text-shadow: 0 0 0.05em var(--clr-secondary);
 }
@@ -337,62 +338,31 @@ main::after {
 }
 
 .project {
-  --project-hover-trans: all ease-out 0.2s;
-  --image-position-top: 0%;
-  --image-position-left: 0%;
-  --image-width: 100%;
-  --image-border: 0px solid var(--clr-background);
-  --title-position-top: 50%;
-  --description-fs: 1rem;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 30svh;
-  border: 2px solid color-mix(in srgb, var(--clr-secondary) 50%, transparent);
-  border-radius: 10px;
-  padding: 0.5rem;
-  color: var(--clr-secondary);
-  background: linear-gradient(
-    160deg,
-    var(--clr-secondary) 30%,
-    var(--clr-secondary)
-  );
-  font-size: clamp(2rem, 3.25vw + 1rem, 4rem);
-  font-weight: bold;
+  border-radius: 20px;
+  background: red;
 }
 
 .project:hover {
-  --image-position-top: -20%;
-  --image-position-left: 15%;
-  --image-width: 70%;
-  --image-border: 20px solid var(--clr-background);
-  --description-fs: 1.175rem;
-  --title-position-top: 35%;
+  --image-pos-top: -10%;
 }
 
 .project-title {
   position: absolute;
-  top: var(--title-position-top);
+  top: calc(100% - 5rem);
+  left: 2%;
   color: var(--clr-background);
-  transition: var(--project-hover-trans);
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  font-weight: bold;
 }
 
 .project-image {
-  position: relative;
-  top: var(--image-position-top);
-  left: var(--image-position-left);
-  max-width: var(--image-width);
-  border: var(--image-border);
-  border-radius: 20px;
+  width: 100%;
   object-fit: cover;
-  transition: var(--project-hover-trans);
 }
 
 .project-description {
-  padding: 1rem;
-  color: var(--clr-text);
-  font-size: var(--description-fs);
-  transition: var(--project-hover-trans);
+  font-size: 1.175rem;
 }
 
 /* -----Contact Section----- */
@@ -430,8 +400,8 @@ main::after {
   border-radius: 35px;
   background: linear-gradient(
     160deg,
-    var(--clr-accent-dull),
-    var(--clr-accent-rich)
+    color-mix(in srgb, transparent 0%, var(--clr-accent-dull)),
+    color-mix(in srgb, transparent 10%, var(--clr-accent-rich))
   );
 }
 
