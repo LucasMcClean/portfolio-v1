@@ -1,14 +1,24 @@
 "use strict";
 
-/* Credit to https://css-tricks.com/books/greatest-css-tricks/scroll-animation/
-   for this code snippet */
-window.addEventListener(
-  "scroll",
-  () => {
-    document.body.style.setProperty(
-      "--scroll",
-      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-    );
-  },
-  false
-);
+const projects = document.querySelectorAll(".project");
+
+for (let i = 0; i < projects.length; i++) {
+  projects[i].setAttribute("id", `proj${i}`);
+  projects[i].addEventListener(
+    "click",
+    function () {
+      selectProject(projects[i].id);
+    },
+    false
+  );
+}
+
+function selectProject(projId) {
+  const selProj = document.getElementById(projId);
+  console.log(selProj.classList);
+  if (selProj.classList.contains("inactive")) {
+    selProj.setAttribute("class", "project active");
+  } else {
+    selProj.setAttribute("class", "project inactive");
+  }
+}

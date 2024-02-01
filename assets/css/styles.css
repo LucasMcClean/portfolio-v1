@@ -179,39 +179,6 @@ main::after {
   z-index: -1;
 }
 
-.parallax-container {
-  position: absolute;
-  top: 0;
-  left: 30%;
-  height: 100%;
-  width: 70%;
-  z-index: -999;
-  overflow: hidden;
-}
-
-.background-pattern {
-  --clr-background-alt: color-mix(
-    in srgb,
-    var(--clr-background) 96.5%,
-    var(--clr-text)
-  );
-  /* height: 100%;
-  width: 100%;
-  background: repeating-linear-gradient(
-    var(--clr-background-alt) 0svh 20svh,
-    transparent 20svh 27svh,
-    var(--clr-background-alt) 27svh 35svh,
-    transparent 35svh 37svh,
-    var(--clr-background-alt) 37svh 40svh,
-    transparent 40svh 45svh
-  );
-  animation: parallax 1s linear;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-  animation-iteration-count: 1;
-  animation-fill-mode: both; */
-}
-
 /* -----About Section----- */
 .about {
   isolation: isolate;
@@ -292,7 +259,7 @@ main::after {
   margin-top: 5svh;
   padding: 1rem;
   border: 5px solid var(--clr-primary);
-  border-radius: 0 25px 25px 0;
+  border-radius: 3px 25px 25px 3px;
   background-color: var(--clr-background);
 }
 
@@ -337,36 +304,62 @@ main::after {
   gap: 1rem;
 }
 
-.project {
+.project.inactive {
+  --trans: all 0.25s;
+  --desc-fs: 0rem;
+  --title-pos-top: calc(100% - 5rem);
+  --img-pos-top: 0%;
+  --img-pos-left: 0%;
+  --img-width: 100%;
   cursor: pointer;
   position: relative;
   border-radius: 20px;
-  transition: all 0.17s;
+  transition: var(--proj-trans);
+}
+
+.project.active {
+  --trans: all 0.25s;
+  --desc-fs: 1rem;
+  --title-pos-top: 35%;
+  --img-pos-top: -20%;
+  --img-pos-left: 20%;
+  --img-width: 60%;
+  cursor: pointer;
+  position: relative;
+  border-radius: 20px;
+  background: var(--clr-secondary);
+  transition: var(--trans);
 }
 
 /* !-----Implement change in JS-----------------------------------------! */
-.project:hover {
+/* .project:hover {
   transform: translateY(-1.5svh);
   box-shadow: 0 1.5svh 5px
     color-mix(in srgb, var(--clr-secondary) 40%, transparent);
-}
+} */
 
 .project-title {
   position: absolute;
-  top: calc(100% - 5rem);
+  top: var(--title-pos-top);
   left: 2%;
   color: var(--clr-background);
   font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
   font-weight: bold;
+  transition: var(--trans);
 }
 
 .project-image {
-  width: 100%;
+  position: relative;
+  top: var(--img-pos-top);
+  left: var(--img-pos-left);
+  width: var(--img-width);
   object-fit: cover;
+  transition: var(--trans);
 }
 
 .project-description {
-  font-size: 1.175rem;
+  font-size: var(--desc-fs);
+  transition: var(--trans);
 }
 
 /* -----Contact Section----- */
