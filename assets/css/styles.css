@@ -315,6 +315,7 @@ main::after {
   --img-width: 100%;
   cursor: pointer;
   position: relative;
+  border: 2px solid transparent;
   border-radius: 20px;
   transition: var(--proj-trans);
 }
@@ -328,22 +329,20 @@ main::after {
   --img-width: 60%;
   cursor: pointer;
   position: relative;
+  border: 2px solid transparent;
   border-radius: 20px;
   background: var(--clr-secondary);
   transition: var(--trans);
 }
 
-/* !-----Implement change in JS-----------------------------------------! */
-/* .project:hover {
-  transform: translateY(-1.5svh);
-  box-shadow: 0 1.5svh 5px
-    color-mix(in srgb, var(--clr-secondary) 40%, transparent);
-} */
+.project:hover {
+  border: 2px solid var(--clr-text);
+}
 
 .project-title {
   position: absolute;
   top: var(--title-pos-top);
-  left: 2%;
+  left: 1rem;
   color: var(--clr-background);
   font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
   font-weight: bold;
@@ -360,6 +359,7 @@ main::after {
 }
 
 .project-description {
+  padding-inline: 1rem;
   font-size: var(--desc-fs);
   transition: var(--trans);
 }

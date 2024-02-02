@@ -18,6 +18,11 @@ function selectProject(projId) {
   console.log(selProj.classList);
   if (selProj.classList.contains("inactive")) {
     selProj.setAttribute("class", "project active");
+    for (let i = 0; i < projects.length; i++) {
+      if (projects[i].classList.contains("active") && projects[i] !== selProj) {
+        projects[i].setAttribute("class", "project inactive");
+      }
+    }
   } else {
     selProj.setAttribute("class", "project inactive");
   }
