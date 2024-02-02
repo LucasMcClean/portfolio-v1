@@ -13,6 +13,19 @@ for (let i = 0; i < projects.length; i++) {
   );
 }
 
+/* Credit to https://css-tricks.com/books/greatest-css-tricks/scroll-animation/
+   for this code snippet */
+window.addEventListener(
+  "scroll",
+  function () {
+    document.body.style.setProperty(
+      "--scroll",
+      window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
+
 function selectProject(projId) {
   const selProj = document.getElementById(projId);
   console.log(selProj.classList);
