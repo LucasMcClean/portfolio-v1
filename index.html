@@ -46,8 +46,7 @@
           <img
             class="about-img"
             src="https://th.bing.com/th/id/OIP.AAOlcwKWHukkSqU1AC2lvwAAAA?rs=1&pid=ImgDetMain"
-            alt="Picture of Lucas McClean"
-          />
+            alt="Picture of Lucas McClean" />
         </div>
         <p class="about-text">
           <strong
@@ -106,9 +105,18 @@
         <div id="contact" class="page-link visually-hidden"></div>
         <h2 class="section-header">Let's Get In Touch</h2>
         <form>
-          <input class="name" type="text" />
-          <input class="email" type="email" />
-          <input class="message" type="text" />
+          <div class="labelled-input">
+            <label for="contact-name">Name:</label>
+            <input id="contact-name" class="name" type="text" />
+          </div>
+          <div class="labelled-input">
+            <label for="contact-email">Email:</label>
+            <input id="contact-email" class="email" type="email" />
+          </div>
+          <div class="labelled-input">
+            <label for="contact-message">Message:</label>
+            <input class="message" type="text" />
+          </div>
           <button class="submit-message" type="submit">Submit</button>
         </form>
       </section>
