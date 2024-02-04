@@ -396,17 +396,14 @@ main::after {
 
 .contact form {
   min-height: 70svh;
+  margin-inline: 2%;
+  border: 6px solid var(--clr-accent-rich);
   border-radius: 35px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background: linear-gradient(
-    160deg,
-    color-mix(in srgb, transparent 0%, var(--clr-accent-dull)),
-    color-mix(in srgb, transparent 10%, var(--clr-accent-rich))
-  );
 }
 
 .contact .labelled-input {
@@ -418,7 +415,6 @@ main::after {
 }
 
 .contact label {
-  color: var(--clr-background);
   font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
   font-weight: bold;
 }
@@ -436,19 +432,22 @@ main::after {
 }
 
 .contact .submit-message {
-  height: 2rem;
-  width: 20%;
+  height: 2.5rem;
+  width: 25%;
   border: 2px solid color-mix(in srgb, var(--clr-background) 40%, transparent);
   border-radius: 20px;
-  background: linear-gradient(
-    20deg,
-    var(--clr-accent-rich),
-    var(--clr-accent-dull)
-  );
+  background: var(--clr-accent-rich);
+  font-size: 1.5rem;
   font-weight: bold;
+  transition: all 0.2s;
 }
 
-.contact
+.contact .submit-message:hover {
+  width: 30%;
+  border: 2px solid var(--clr-accent-rich);
+  color: var(--clr-text);
+  background: var(--clr-background);
+}
 
 /* -----Footer----- */
 footer {
