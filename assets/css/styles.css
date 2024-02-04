@@ -336,7 +336,7 @@ main::after {
 }
 
 .project:hover {
-  border: 2px solid var(--clr-text);
+  border: 2px solid color-mix(in srgb, var(--clr-secondary) 80%, transparent);
 }
 
 .project-title {
@@ -425,10 +425,16 @@ main::after {
   padding-inline: 0.4rem;
   border-radius: 5px;
   min-height: 1rem;
+  font-weight: bold;
 }
 
 .contact .message {
   min-height: 10rem;
+  width: 80%;
+  padding-block: 0.05rem;
+  padding-inline: 0.4rem;
+  border-radius: 5px;
+  font-weight: normal;
 }
 
 .contact .submit-message {
