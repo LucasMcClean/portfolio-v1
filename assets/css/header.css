@@ -1,0 +1,76 @@
+/* -----Side Header----- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-text);
+  background: var(--clr-background);
+  z-index: 888;
+}
+
+.header-text {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.title {
+  padding-left: 1.2rem;
+  font-size: clamp(2rem, 3vw + 1.5rem, 4.5rem);
+  font-weight: bold;
+  line-height: 0.8;
+  text-shadow: 0 0 0.025em var(--clr-primary);
+  transition: all 0.3s;
+}
+
+.title:hover {
+  color: color-mix(in srgb, var(--clr-primary) 80%, var(--clr-text));
+  text-shadow: 0 0 0.125em var(--clr-primary);
+}
+
+.hire-me {
+  --active-color: var(--clr-text);
+  position: relative;
+  width: 40%;
+  height: 1.7em;
+  margin-block: 0.2em;
+  border-radius: 10px;
+  background-color: var(--active-color);
+  font-size: clamp(1.275rem, 1vw + 0.5rem, 1.4rem);
+  font-weight: bold;
+  transition: width 0.2s, margin 0.2s, background-color 0.3s;
+}
+
+.hire-me:hover {
+  --active-color: color-mix(
+    in srgb,
+    var(--clr-accent-dull) 98%,
+    var(--clr-text)
+  );
+  cursor: pointer;
+  width: 60%;
+  margin-block: 0.2em;
+  background-color: var(--active-color);
+  box-shadow: 0 0 0.2em var(--active-color);
+}
+
+.hire-me::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 2em;
+  width: 100%;
+  background: var(--active-color);
+  transform: perspective(1em) rotateX(10deg);
+  filter: blur(10px);
+  opacity: 0.15;
+}

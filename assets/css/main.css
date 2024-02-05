@@ -19,150 +19,6 @@ html {
   top: -8vh;
 }
 
-/* -----Navigation Bar----- */
-.nav-bar {
-  isolation: isolate;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  min-height: 5vh;
-  width: 93%;
-  padding: 0 5vw 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--clr-background);
-  font-size: 1.125rem;
-}
-
-.nav-bar::after {
-  content: "";
-  position: absolute;
-  left: -10%;
-  width: 110%;
-  min-height: 6vh;
-  background: var(--clr-text);
-  transform: skewX(-40deg);
-  z-index: -1;
-}
-
-.nav-name {
-  font-size: 1.5rem;
-  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 5rem;
-}
-
-.nav-links a {
-  color: var(--clr-background);
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  border-bottom-width: 4px;
-}
-
-.nav-links span {
-  font-weight: bold;
-}
-
-.progress {
-  height: 2px;
-  width: 0%;
-  background-color: var(--clr-text);
-  position: fixed;
-  top: 6vh;
-  left: 0;
-  transform: skewX(-45deg);
-  animation: progress 1s linear;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-}
-
-/* -----Side Header----- */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--clr-text);
-  background: var(--clr-background);
-  z-index: 888;
-}
-
-.header-text {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-}
-
-.title {
-  padding-left: 1.2rem;
-  font-size: clamp(2rem, 3vw + 1.5rem, 4.5rem);
-  font-weight: bold;
-  line-height: 0.8;
-  text-shadow: 0 0 0.025em var(--clr-primary);
-  transition: all 0.3s;
-}
-
-.title:hover {
-  color: color-mix(in srgb, var(--clr-primary) 80%, var(--clr-text));
-  text-shadow: 0 0 0.125em var(--clr-primary);
-}
-
-.hire-me {
-  --active-color: var(--clr-text);
-  position: relative;
-  width: 40%;
-  height: 1.7em;
-  margin-block: 0.2em;
-  border-radius: 10px;
-  background-color: var(--active-color);
-  font-size: clamp(1.275rem, 1vw + 0.5rem, 1.4rem);
-  font-weight: bold;
-  transition: width 0.2s, margin 0.2s, background-color 0.3s;
-}
-
-.hire-me:hover {
-  --active-color: color-mix(
-    in srgb,
-    var(--clr-accent-dull) 98%,
-    var(--clr-text)
-  );
-  cursor: pointer;
-  width: 60%;
-  margin-block: 0.2em;
-  background-color: var(--active-color);
-  box-shadow: 0 0 0.2em var(--active-color);
-}
-
-.hire-me::after {
-  content: "";
-  position: absolute;
-  top: 120%;
-  left: 0;
-  height: 2em;
-  width: 100%;
-  background: var(--active-color);
-  transform: perspective(1em) rotateX(10deg);
-  filter: blur(10px);
-  opacity: 0.15;
-}
-
 /* -----Main Content----- */
 main {
   position: relative;
@@ -212,29 +68,6 @@ main::after {
   text-align: center;
 }
 
-.about h2 {
-  text-shadow: 0 0 0.05em var(--clr-primary);
-}
-
-.about h2:hover {
-  --reflection-opacity: 0.2;
-  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(90%);
-  text-shadow: 0 0 0.1em var(--clr-primary);
-}
-
-.about h2::after {
-  content: "What I Do";
-  position: absolute;
-  top: 40%;
-  left: 0;
-  height: 2em;
-  width: 100%;
-  transform: var(--reflection-transforms);
-  filter: blur(10px);
-  opacity: var(--reflection-opacity);
-  transition: all 0.25s;
-}
-
 .about-slogan {
   margin-inline: 0.6rem;
   margin-top: -4rem;
@@ -277,27 +110,6 @@ main::after {
 
 .projects h2 {
   margin-bottom: 1.2em;
-  text-align: center;
-  text-shadow: 0 0 0.05em var(--clr-secondary);
-}
-
-.projects h2:hover {
-  --reflection-opacity: 0.2;
-  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(90%);
-  text-shadow: 0 0 0.1em var(--clr-secondary);
-}
-
-.projects h2::after {
-  content: "Selected Work";
-  position: absolute;
-  top: 40%;
-  left: 0;
-  height: 2em;
-  width: 100%;
-  transform: var(--reflection-transforms);
-  filter: blur(10px);
-  opacity: var(--reflection-opacity);
-  transition: all 0.25s;
 }
 
 .projects-grid-wrapper {
@@ -323,7 +135,7 @@ main::after {
 .project.active {
   --trans: all 0.25s;
   --desc-fs: 1rem;
-  --title-pos-top: 35%;
+  --title-pos-top: 38%;
   --img-pos-top: -20%;
   --img-pos-left: 20%;
   --img-width: 60%;
@@ -371,27 +183,6 @@ main::after {
 
 .contact h2 {
   margin-bottom: 1.2em;
-  text-align: center;
-  text-shadow: 0 0 0.05em var(--clr-accent-dull);
-}
-
-.contact h2:hover {
-  --reflection-opacity: 0.2;
-  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(90%);
-  text-shadow: 0 0 0.1em var(--clr-accent-dull);
-}
-
-.contact h2::after {
-  content: "Let's Get In Touch";
-  position: absolute;
-  top: 40%;
-  left: 0;
-  height: 2em;
-  width: 100%;
-  transform: var(--reflection-transforms);
-  filter: blur(10px);
-  opacity: var(--reflection-opacity);
-  transition: all 0.25s;
 }
 
 .contact form {
@@ -412,6 +203,7 @@ main::after {
   padding-inline: 10%;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .contact label {
@@ -507,10 +299,12 @@ strong {
 }
 
 .section-header {
-  --reflection-opacity: 0.15;
-  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(80%);
+  /* --reflection-opacity: 0.15;
+  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(80%); */
   position: relative;
   margin: 0 0 20svh 0;
+  text-align: center;
+  line-height: 1;
   font-size: clamp(4rem, 4vw + 1rem, 8rem);
   font-weight: bold;
   transition: all 0.25s;
