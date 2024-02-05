@@ -256,11 +256,47 @@ main::after {
 
 /* -----Footer----- */
 footer {
-  height: 30svh;
   margin: 0 2% 0 32%;
 }
 
-.made-by {
+.footer-info {
+  margin-bottom: 5svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  color: color-mix(in srgb, var(--clr-text) 75%, transparent);
+  font-size: 1.125rem;
+}
+
+.footer-info li {
+  display: flex;
+  align-items: center;
+}
+
+.social-link {
+  margin-bottom: 3rem;
+  margin-left: 15%;
+  align-self: flex-start;
+}
+
+.footer-info a {
+  margin-left: 1rem;
+  color: var(--clr-text);
+  font-size: 1.25rem;
+}
+
+.footer-info a:hover {
+  color: var(--clr-primary);
+}
+
+.footer-info img {
+  width: 3rem;
+  filter: invert(1);
+}
+
+.ell {
   position: relative;
   top: 85%;
   left: 0;
@@ -306,8 +342,6 @@ strong {
 }
 
 .section-header {
-  /* --reflection-opacity: 0.15;
-  --reflection-transforms: perspective(1em) rotateX(190deg) scaleY(80%); */
   position: relative;
   margin: 0 0 20svh 0;
   text-align: center;
