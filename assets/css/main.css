@@ -34,7 +34,7 @@ main::after {
   height: 98%;
   width: 2px;
   background: var(--clr-text);
-  z-index: -1;
+  z-index: 998;
 }
 
 /* -----About Section----- */
@@ -122,13 +122,16 @@ main::after {
   --trans: all 0.25s;
   --desc-fs: 0rem;
   --title-pos-top: calc(100% - 5rem);
+  --title-clr: var(--clr-background);
   --img-pos-top: 0%;
   --img-pos-left: 0%;
   --img-width: 100%;
+  --img-brdr: 5px solid transparent;
   cursor: pointer;
   position: relative;
   border: 2px solid transparent;
   border-radius: 20px;
+  opacity: 0.7;
   transition: var(--proj-trans);
 }
 
@@ -136,26 +139,32 @@ main::after {
   --trans: all 0.25s;
   --desc-fs: 1rem;
   --title-pos-top: 38%;
+  --title-clr: var(var(--clr-text));
   --img-pos-top: -20%;
   --img-pos-left: 20%;
   --img-width: 60%;
+  --img-brdr: 5px solid var(--clr-background);
   cursor: pointer;
   position: relative;
-  border: 2px solid transparent;
   border-radius: 20px;
-  background: var(--clr-secondary);
+  background: linear-gradient(
+    160deg,
+    transparent,
+    color-mix(in srgb, var(--clr-text) 10%, transparent)
+  );
+  opacity: 0.7;
   transition: var(--trans);
 }
 
 .project:hover {
-  border: 2px solid color-mix(in srgb, var(--clr-secondary) 80%, transparent);
+  opacity: 1;
 }
 
 .project-title {
   position: absolute;
   top: var(--title-pos-top);
   left: 1rem;
-  color: var(--clr-background);
+  color: var(--title-clr);
   font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
   font-weight: bold;
   transition: var(--trans);
@@ -166,6 +175,8 @@ main::after {
   top: var(--img-pos-top);
   left: var(--img-pos-left);
   width: var(--img-width);
+  border: var(--img-brdr);
+  border-radius: 20px;
   object-fit: cover;
   transition: var(--trans);
 }

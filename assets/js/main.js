@@ -1,7 +1,11 @@
 "use strict";
 
+// Array of project cards
 const projects = document.querySelectorAll(".project");
 
+/* !-----Call on load-----! */
+
+// Assign each project an ID
 for (let i = 0; i < projects.length; i++) {
   projects[i].setAttribute("id", `proj${i}`);
   projects[i].addEventListener(
@@ -12,6 +16,9 @@ for (let i = 0; i < projects.length; i++) {
     false
   );
 }
+
+// Set a project as active on load
+selectProject(projects[0].id);
 
 /* Credit to https://css-tricks.com/books/greatest-css-tricks/scroll-animation/
    for this code snippet */
@@ -26,6 +33,9 @@ window.addEventListener(
   false
 );
 
+/* !-----End of call on load-----! */
+
+// Called on click to set project state to active
 function selectProject(projId) {
   const selProj = document.getElementById(projId);
   console.log(selProj.classList);
