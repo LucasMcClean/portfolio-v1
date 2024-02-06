@@ -37,6 +37,17 @@ main::after {
   z-index: 998;
 }
 
+@media only screen and (max-width: 1000px) {
+  main {
+    margin: 0 1% 0 1%;
+    padding: 0 1% 0 1%;
+  }
+
+  main::after {
+    display: none;
+  }
+}
+
 /* -----About Section----- */
 .about {
   isolation: isolate;
@@ -103,6 +114,33 @@ main::after {
   max-height: 80svh;
 }
 
+@media only screen and (max-width: 1000px) {
+  .about-grid-wrapper {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .about-grid-wrapper h2 {
+    width: 100%;
+    border-radius: 5px 20px 5px 20px;
+    background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--clr-primary) 50%, transparent),
+    transparent
+  );
+  }
+
+  .about img {
+    position: relative;
+    max-height: 35svh;
+    border: 5px solid color-mix(in srgb, var(--clr-text) 10%, transparent);
+    border-radius: 5px;
+  }
+}
+
 /* -----Projects Section----- */
 .projects {
   margin: 20svh 0;
@@ -110,6 +148,12 @@ main::after {
 
 .projects h2 {
   margin-bottom: 1.2em;
+  border-radius: 5px 20px 5px 20px;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--clr-secondary) 50%, transparent),
+    transparent
+  );
 }
 
 .projects-grid-wrapper {
@@ -137,8 +181,8 @@ main::after {
 
 .project.active {
   --trans: all 0.25s;
-  --desc-fs: 1rem;
-  --title-pos-top: 38%;
+  --desc-fs: font-size: clamp(.7rem, 5vw + 1rem, 1.1rem);;
+  --title-pos-top: 32%;
   --title-clr: var(var(--clr-text));
   --img-pos-top: -20%;
   --img-pos-left: 20%;
@@ -182,9 +226,55 @@ main::after {
 }
 
 .project-description {
+  padding-block: .5rem;
   padding-inline: 1rem;
   font-size: var(--desc-fs);
   transition: var(--trans);
+}
+
+@media only screen and (max-width: 1000px) {
+  .projects {
+    margin: 10svh 0;
+  }
+
+  .projects-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project.inactive {
+    --title-fs: clamp(1.5rem, 4vw + 1rem, 3rem);
+    opacity: 1;
+  }
+
+  .project.active {
+    --trans: all 0.25s;
+    --desc-fs: font-size: clamp(.7rem, 5vw + 1rem, 1.1rem);;
+    --title-pos-top: 0;
+    --title-clr: var(--clr-background);
+    --title-fs: 0;
+    --img-pos-top: -20%;
+    --img-pos-left: 0%;
+    --img-width: 100%;
+    --img-brdr: 5px solid var(--clr-background);
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    background: linear-gradient(
+      160deg,
+      transparent,
+      color-mix(in srgb, var(--clr-text) 10%, transparent)
+    );
+    opacity: 1;
+    transition: var(--trans);
+  }
+
+  .project-title {
+    font-size: var(--title-fs);
+    transition: all 0s;
+  }
 }
 
 /* -----Contact Section----- */
@@ -197,6 +287,7 @@ main::after {
   margin-bottom: -1.5rem;
   margin-left: 6%;
   padding-inline: 1rem;
+  font-size: clamp(1.5rem, 4vw + 1rem, 4rem);
   background: var(--clr-background);
 }
 
@@ -248,8 +339,9 @@ main::after {
 
 .contact .submit-message {
   height: 2.5rem;
-  width: 25%;
+  min-width: 25%;
   margin-top: 1rem;
+  padding: .1rem .5rem .1rem .5rem;
   border: 2px solid color-mix(in srgb, var(--clr-background) 40%, transparent);
   border-radius: 20px;
   background: var(--clr-accent-rich);
@@ -259,10 +351,22 @@ main::after {
 }
 
 .contact .submit-message:hover {
-  width: 30%;
+  min-width: 30%;
   border: 2px solid var(--clr-accent-rich);
   color: var(--clr-text);
   background: var(--clr-background);
+}
+
+@media only screen and (max-width: 1000px) {
+  .contact .labelled-input {
+    width: 100%;
+    padding-block: 2%;
+    padding-inline: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5rem;
+  }
 }
 
 /* -----Footer----- */
