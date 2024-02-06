@@ -70,6 +70,12 @@ header {
   opacity: 0.15;
 }
 
+.mobile-only {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 @media only screen and (max-width: 1000px) {
   header {
     position: relative;
@@ -96,6 +102,7 @@ header {
   }
 
   .mobile-only {
+    display: contents;
     margin-bottom: -4rem;
     border-bottom: 4px solid var(--clr-text);
     color: var(--clr-text);
