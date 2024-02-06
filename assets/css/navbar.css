@@ -67,29 +67,6 @@
 
 @media only screen and (max-width: 1000px) {
   .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    min-height: 5vh;
-    width: 93%;
-    padding: 0 5vw 0 2rem;
-  }
-
-  .nav-bar::after {
-    background: var(--clr-background);
-  }
-
-  .nav-name {
-    color: var(--clr-text);
-  }
-
-  .nav-links {
-    display: none;
-    height: 0;
-  }
-
-  .progress {
     display: none;
   }
 }

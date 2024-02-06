@@ -94,4 +94,12 @@ header {
     text-align: center;
     font-size: 4rem;
   }
+
+  .mobile-only {
+    margin-bottom: -4rem;
+    border-bottom: 4px solid var(--clr-text);
+    color: var(--clr-text);
+    font-size: clamp(2rem, 3vw + 1.5rem, 4.5rem);
+    font-weight: bolder;
+  }
 }
