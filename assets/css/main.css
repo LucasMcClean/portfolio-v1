@@ -129,12 +129,10 @@ main::after {
 
   .about-grid-wrapper h2 {
     width: 100%;
+    margin-top: 5svh;
+    padding: 0.4rem;
     border-radius: 5px 20px 5px 20px;
-    background: linear-gradient(
-      to right,
-      color-mix(in srgb, var(--clr-primary) 50%, transparent),
-      transparent
-    );
+    background: color-mix(in srgb, var(--clr-primary) 75%, transparent);
   }
 
   .about img {
@@ -152,12 +150,9 @@ main::after {
 
 .projects h2 {
   margin-bottom: 1.2em;
+  padding: 0.4rem;
   border-radius: 5px 20px 5px 20px;
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--clr-secondary) 50%, transparent),
-    transparent
-  );
+  background: color-mix(in srgb, var(--clr-secondary) 75%, transparent);
 }
 
 .projects-grid-wrapper {
